@@ -44,10 +44,3 @@ class Test(unittest.TestCase):
         png_file = PngFile('TestPictures/basn0g01.png')
         self.assertTrue(png_file.IENDchunk.data_dict['State'] == 'Correct')
 
-    def test_for_idatanalize(self):
-        png_file = PngFile('TestPictures/basn0g01.png')
-        self.assertTrue(png_file.IDATchunk.data_dict['CM'] == 'Deflate compression method')
-        self.assertTrue(png_file.IDATchunk.data_dict['Window size'] == '32768 bytes')
-        self.assertTrue(png_file.IDATchunk.data_dict['FLEVEL'] == 'Default compression')
-        self.assertTrue(png_file.IDATchunk.data_dict['FDICT'] == 'No dict')
-        self.assertTrue(png_file.IDATchunk.data_dict['FCHECK'] == 'Correct')

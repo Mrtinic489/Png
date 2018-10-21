@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from Chunk import Chunk
-
+import zlib
 
 class PngFile:
 
@@ -19,8 +19,12 @@ class PngFile:
         self.find_chunks()
         self.IHDRchunk = Chunk(self.list_of_raw_chunks[0])
         self.IHDRanalize(self.IHDRchunk)
-        self.IDATchunk = Chunk(self.list_of_raw_chunks[-2])
-        self.IDATanalize(self.IDATchunk)
+        self.IDATchunks = []
+        for item in self.list_of_raw_chunks:
+            chunk = Chunk(item)
+            if chunk.type == 'IDAT':
+                self.IDATanalize(chunk)
+                self.IDATchunks.append(chunk)
         self.IENDchunk = Chunk(self.list_of_raw_chunks[-1])
         self.IENDanalize(self.IENDchunk)
         self.print_info()
@@ -28,13 +32,9 @@ class PngFile:
     def print_info(self):
         for pair in self.IHDRchunk.data_dict.items():
             print(pair)
-        for pair in self.IDATchunk.data_dict.items():
-            print(pair)
-        for item in self.list_of_raw_chunks:
-            chunk = Chunk(item)
-            if chunk.type == 'sRGB':
-                self.sRGBanalize(chunk)
-                print(chunk.data_dict.items())
+        for item in self.IDATchunks:
+            for pair in item.data_dict.items():
+                print(pair)
         print(self.IENDchunk.data_dict.items())
 
     def find_chunks(self):
@@ -69,47 +69,8 @@ class PngFile:
             chunk.data_dict['Interlace info'] = 'Adam7 interlace'
 
     def IDATanalize(self, chunk):
-        CMF = bin(chunk.raw_chunk_data[0]).replace('b', '0')
-        while len(CMF) < 8:
-            CMF = '0' + CMF
-        while len(CMF) > 8:
-            CMF = CMF[1:]
-        if CMF[-4:] == '1000':
-            chunk.data_dict['CM'] = 'Deflate compression method'
-        else:
-            chunk.data_dict['CM'] = 'No info about compression method'
-        CINFO = 0
-        for i in range(4):
-                CINFO += pow(2, i) * int(CMF[3 - i])
-        window_size = pow(2, CINFO + 8)
-        chunk.data_dict['Window size'] = str(window_size) + ' bytes'
-        FLG = bin(chunk.raw_chunk_data[1]).replace('b', '0')
-        while len(FLG) < 8:
-            FLG = '0' + FLG
-        while len(FLG) > 8:
-            FLG = FLG[1:]
-        FLEVEL = 0
-        for i in range(2):
-            FLEVEL += pow(2, i) * int(FLG[1 - i])
-        if FLEVEL == 0:
-            chunk.data_dict['FLEVEL'] = 'Fastest compression'
-        elif FLEVEL == 1:
-            chunk.data_dict['FLEVEL'] = 'Fast compression'
-        elif FLEVEL == 2:
-            chunk.data_dict['FLEVEL'] = 'Default compression'
-        else:
-            chunk.data_dict['FLEVEL'] = 'Maximum compression(the slowest)'
-        FDICT = int(FLG[2])
-        if FDICT == 0:
-            chunk.data_dict['FDICT'] = 'No dict'
-        else:
-            chunk.data_dict['FDICT'] = 'Contains'
-        CMF_int = chunk.raw_chunk_data[0]
-        FLG_int = chunk.raw_chunk_data[1]
-        if (CMF_int * 256 + FLG_int) % 31 == 0:
-            chunk.data_dict['FCHECK'] = 'Correct'
-        else:
-            chunk.data_dict['FCHECK'] = 'Uncorrect'
+        result = zlib.decompress(chunk.raw_chunk_data)
+        chunk.data_dict['len'] = len(result)
 
     def PLTEanalize(self, chunk):
         for i in range(0, len(chunk.raw_chunk_data), 3):
@@ -146,6 +107,16 @@ class PngFile:
 
     def iCCPanalize(self, chunk):
         pass
+
+    def zTXtanalize(self, chunk):
+        index = 0
+        for i in range(len(chunk.raw_chunk_data)):
+            if chunk.raw_chunk_data[i] == 0:
+                index = i
+                break
+        key_word = chunk.raw_chunk_data[:index].decode()
+        result = zlib.decompress(chunk.raw_chunk_data[index + 2:]).decode()
+        chunk.data_dict[key_word] = result
 
     def tEXtanalize(self, chunk):
         result_str = chunk.raw_chunk_data.decode()
