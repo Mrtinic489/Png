@@ -1,0 +1,6 @@
+[
+  "test_file.py::Test::test_for_idatanalize",
+  "test_file.py::Test::test_for_iendanalize",
+  "test_file.py::Test::test_for_ihdranalize",
+  "test_file.py::Test::test_for_init"
+]
