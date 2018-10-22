@@ -21,11 +21,11 @@ class PngFile:
         self.IHDRchunk = Chunk(self.list_of_raw_chunks[0])
         self.IHDRanalize(self.IHDRchunk)
         self.IDATchunks = []
-        for item in self.list_of_raw_chunks:
-            chunk = Chunk(item)
-            if chunk.type == 'IDAT':
-                self.IDATanalize(self.IHDRchunk, chunk)
-                self.IDATchunks.append(chunk)
+        # for item in self.list_of_raw_chunks:
+        #     chunk = Chunk(item)
+        #     if chunk.type == 'IDAT':
+        #         self.IDATanalize(self.IHDRchunk, chunk)
+        #         self.IDATchunks.append(chunk)
         self.IENDchunk = Chunk(self.list_of_raw_chunks[-1])
         self.IENDanalize(self.IENDchunk)
         self.print_info()
@@ -33,13 +33,13 @@ class PngFile:
     def print_info(self):
         for pair in self.IHDRchunk.data_dict.items():
             print(pair)
-        for item in self.IDATchunks:
-            for pair in item.data_dict.items():
-                print(pair)
+        # for item in self.IDATchunks:
+        #     for pair in item.data_dict.items():
+        #         print(pair)
         for item in self.list_of_raw_chunks:
             chunk = Chunk(item)
-            if chunk.type == 'iTXt':
-                self.iTXtanalize(chunk)
+            if chunk.type == 'bKGD':
+                self.bKGDanalize(self.IHDRchunk,chunk)
                 print(chunk.data_dict.items())
         print(self.IENDchunk.data_dict.items())
 
@@ -87,15 +87,20 @@ class PngFile:
             data += bin_number
             chunk.data_dict['data'] = data
 
-
-
     def PLTEanalize(self, chunk):
         for i in range(0, len(chunk.raw_chunk_data), 3):
             chunk.data_dict[i // 3] =\
                 tuple([chunk.raw_chunk_data[i], chunk.raw_chunk_data[i + 1], chunk.raw_chunk_data[i + 2]])
 
-    def bKGDanalize(self, chunk):
-        pass
+    def bKGDanalize(self, ihdr_chunk, chunk):
+        if ihdr_chunk.data_dict['Color info'] == 'Индексированные значения':
+            chunk.data_dict['Pallete index'] = chunk.raw_chunk_data[0]
+        elif ihdr_chunk.data_dict['Color info'] == 'Grayscale' or ihdr_chunk.data_dict['Color info'] == 'Grayscale + alpha channel':
+            chunk.data_dict['Gray'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
+        else:
+            chunk.data_dict['Red'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
+            chunk.data_dict['Green'] = int.from_bytes(chunk.raw_chunk_data[2:4], 'big')
+            chunk.data_dict['Blue'] = int.from_bytes(chunk.raw_chunk_data[4:6], 'big')
 
     def cHRManalize(self, chunk):
         chunk.data_dict['White point x'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big') / 100000
@@ -117,13 +122,26 @@ class PngFile:
         chunk.data_dict['Rendering intent'] = chunk.raw_chunk_data[0]
 
     def pHYsanalize(self, chunk):
-        pass
+        chunk.data_dict['Unit specifire'] = chunk.raw_chunk_data[8]
+        if chunk.data_dict['Unit specifire'] == 1:
+            chunk.data_dict['Pixels per meter, X'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big')
+            chunk.data_dict['Pixels per meter, Y'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big')
+        else:
+            chunk.data_dict['Pixels per unknow unit, X'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big')
+            chunk.data_dict['Pixels per unknow unit, Y'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big')
 
     def sBITanalize(self, chunk):
         pass
 
     def iCCPanalize(self, chunk):
-        pass
+        index = 0
+        for i in range(len(chunk.raw_chunk_data)):
+            if chunk.raw_chunk_data[i] == 0:
+                index = i
+                break
+        profile_name = chunk.raw_chunk_data[:index].decode()
+        profile = zlib.decompress(chunk.raw_chunk_data[index + 2:]).decode()
+        chunk.data_dict[profile_name] = profile
 
     def iTXtanalize(self, chunk):
         list_of_separators = []
@@ -154,7 +172,13 @@ class PngFile:
         chunk.data_dict[result_str[0]] = result_str[1]
 
     def tIMEamalize(self, chunk):
-        pass
+        chunk.data_dict['Year'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
+        chunk.data_dict['Month'] = chunk.raw_chunk_data[2]
+        chunk.data_dict['Day'] = chunk.raw_chunk_data[3]
+        chunk.data_dict['Hour'] = chunk.raw_chunk_data[4]
+        chunk.data_dict['Minute'] = chunk.raw_chunk_data[5]
+        chunk.data_dict['Second'] = chunk.raw_chunk_data[6]
+
 
     def tRNSanalize(self, ihdr_chunk, chunk):
         if ihdr_chunk.data_dict['Color info'] == 'Индексированные значения':
