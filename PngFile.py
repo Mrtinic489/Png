@@ -2,6 +2,7 @@
 from Chunk import Chunk
 import zlib
 
+
 class PngFile:
 
     def __init__(self, filename):
@@ -23,7 +24,7 @@ class PngFile:
         for item in self.list_of_raw_chunks:
             chunk = Chunk(item)
             if chunk.type == 'IDAT':
-                self.IDATanalize(chunk)
+                self.IDATanalize(self.IHDRchunk, chunk)
                 self.IDATchunks.append(chunk)
         self.IENDchunk = Chunk(self.list_of_raw_chunks[-1])
         self.IENDanalize(self.IENDchunk)
@@ -35,6 +36,11 @@ class PngFile:
         for item in self.IDATchunks:
             for pair in item.data_dict.items():
                 print(pair)
+        for item in self.list_of_raw_chunks:
+            chunk = Chunk(item)
+            if chunk.type == 'iTXt':
+                self.iTXtanalize(chunk)
+                print(chunk.data_dict.items())
         print(self.IENDchunk.data_dict.items())
 
     def find_chunks(self):
@@ -68,9 +74,20 @@ class PngFile:
         else:
             chunk.data_dict['Interlace info'] = 'Adam7 interlace'
 
-    def IDATanalize(self, chunk):
+    def IDATanalize(self, ihdr_chunk, chunk):
         result = zlib.decompress(chunk.raw_chunk_data)
-        chunk.data_dict['len'] = len(result)
+        data = ''
+        for item in result:
+            bin_number = bin(item).replace('b', '')
+            while len(bin_number) > 8:
+                bin_number = bin_number[1:]
+            while len(bin_number) < 8:
+                bin_number = '0' + bin_number
+            bin_number = bin_number[::-1]
+            data += bin_number
+            chunk.data_dict['data'] = data
+
+
 
     def PLTEanalize(self, chunk):
         for i in range(0, len(chunk.raw_chunk_data), 3):
@@ -107,6 +124,19 @@ class PngFile:
 
     def iCCPanalize(self, chunk):
         pass
+
+    def iTXtanalize(self, chunk):
+        list_of_separators = []
+        for i in range(len(chunk.raw_chunk_data)):
+            if chunk.raw_chunk_data[i] == 0:
+                list_of_separators.append(i)
+        key_word = chunk.raw_chunk_data[:list_of_separators[0]].decode()
+        text = ""
+        if chunk.raw_chunk_data[list_of_separators[0] + 1] == 1:
+            text = zlib.decompress(chunk.raw_chunk_data[list_of_separators[-1] + 1:]).decode()
+        else:
+            text = chunk.raw_chunk_data[list_of_separators[-1] + 1:].decode()
+        chunk.data_dict[key_word] = text
 
     def zTXtanalize(self, chunk):
         index = 0
