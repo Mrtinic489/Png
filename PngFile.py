@@ -18,30 +18,48 @@ class PngFile:
             exit(-1)
         self.list_of_raw_chunks = []
         self.find_chunks()
+        self.decoded_chunks = []
         self.IHDRchunk = Chunk(self.list_of_raw_chunks[0])
         self.IHDRanalize(self.IHDRchunk)
-        self.IDATchunks = []
-        # for item in self.list_of_raw_chunks:
-        #     chunk = Chunk(item)
-        #     if chunk.type == 'IDAT':
-        #         self.IDATanalize(self.IHDRchunk, chunk)
-        #         self.IDATchunks.append(chunk)
-        self.IENDchunk = Chunk(self.list_of_raw_chunks[-1])
-        self.IENDanalize(self.IENDchunk)
-        self.print_info()
+        self.decoded_chunks.append(self.IHDRchunk)
+        self.analize_chunks()
+
+    def analize_chunks(self):
+        for i in range(1, len(self.list_of_raw_chunks)):
+            chunk = Chunk(self.list_of_raw_chunks[i])
+            if chunk.type == 'iTXt':
+                self.iTXtanalize(chunk)
+            elif chunk.type == 'tEXt':
+                self.tEXtanalize(chunk)
+            elif chunk.type == 'zTXt':
+                self.zTXtanalize(chunk)
+            elif chunk.type == 'cHRM':
+                self.cHRManalize(chunk)
+            elif chunk.type == 'gAMA':
+                self.gAMAanalize(chunk)
+            elif chunk.type == 'iCCP':
+                self.iCCPanalize(chunk)
+            elif chunk.type == 'sRGB':
+                self.sRGBanalize(chunk)
+            elif chunk.type == 'bKGD':
+                self.bKGDanalize(self.IHDRchunk, chunk)
+            elif chunk.type == 'tRNS':
+                self.tRNSanalize(self.IHDRchunk, chunk)
+            elif chunk.type == 'pHYs':
+                self.pHYsanalize(chunk)
+            elif chunk.type == 'tIME':
+                self.tIMEamalize(chunk)
+            elif chunk.type == 'PLTE':
+                self.PLTEanalize(chunk)
+            elif chunk.type == 'IEND':
+                self.IENDanalize(chunk)
+            self.decoded_chunks.append(chunk)
+
 
     def print_info(self):
-        for pair in self.IHDRchunk.data_dict.items():
-            print(pair)
-        # for item in self.IDATchunks:
-        #     for pair in item.data_dict.items():
-        #         print(pair)
-        for item in self.list_of_raw_chunks:
-            chunk = Chunk(item)
-            if chunk.type == 'bKGD':
-                self.bKGDanalize(self.IHDRchunk,chunk)
-                print(chunk.data_dict.items())
-        print(self.IENDchunk.data_dict.items())
+        for item in self.decoded_chunks:
+            if len(item.data_dict.items()) != 0:
+                print(item.data_dict.items())
 
     def find_chunks(self):
         index = 8
@@ -113,7 +131,7 @@ class PngFile:
         chunk.data_dict['Blue y'] = int.from_bytes(chunk.raw_chunk_data[28:32], 'big') / 100000
 
     def gAMAanalize(self, chunk):
-        chunk.data_dict['Gama value'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big') / 100000
+        chunk.data_dict['Gamma value'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big') / 100000
 
     def hISTanalize(self, chunk):
         pass
@@ -140,7 +158,7 @@ class PngFile:
                 index = i
                 break
         profile_name = chunk.raw_chunk_data[:index].decode()
-        profile = zlib.decompress(chunk.raw_chunk_data[index + 2:]).decode()
+        profile = zlib.decompress(chunk.raw_chunk_data[index + 2:])
         chunk.data_dict[profile_name] = profile
 
     def iTXtanalize(self, chunk):

@@ -4,4 +4,4 @@
 4)Распарсить IHDR и IEND - DONE
 5)Распарсить первые байты IDAT - DONE
 6)Распарсить всё что внутри IDAT
-7)iTXt+, tEXt+, zTXt+, cHRM+, gAMA+, iCCP+(нет файлов), sBIT, sRGB+(нет файлов), bKGD+, hIST, tRNS+, pHYs+, sPLT, tIME+, PLTE+ - 12/15
+7)iTXt+, tEXt+, zTXt+, cHRM+, gAMA+, iCCP+, sBIT, sRGB+(нет файлов), bKGD+, hIST, tRNS+, pHYs+, sPLT, tIME+, PLTE+ - 12/15
