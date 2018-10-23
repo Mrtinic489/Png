@@ -51,6 +51,12 @@ class PngFile:
                 self.tIMEamalize(chunk)
             elif chunk.type == 'PLTE':
                 self.PLTEanalize(chunk)
+            elif chunk.type == 'sBIT':
+                self.sBITanalize(self.IHDRchunk, chunk)
+            elif chunk.type == 'hIST':
+                self.hISTanalize(chunk)
+            elif chunk.type == 'sPLT':
+                self.sPLTanalize(chunk)
             elif chunk.type == 'IEND':
                 self.IENDanalize(chunk)
             self.decoded_chunks.append(chunk)
@@ -134,7 +140,25 @@ class PngFile:
         chunk.data_dict['Gamma value'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big') / 100000
 
     def hISTanalize(self, chunk):
-        pass
+        for i in range(0, len(chunk.raw_chunk_data), 2):
+            chunk.data_dict['Hist info ' + str(i)] = int.from_bytes(chunk.raw_chunk_data[i:i+2], 'big')
+
+    def sBITanalize(self, ihdr_chunk, chunk):
+        if ihdr_chunk.data_dict['Color info'] == 'Grayscale':
+            chunk.data_dict['Significant info'] = chunk.raw_chunk_data[0]
+        elif ihdr_chunk.data_dict['Color info'] == 'RGB' or ihdr_chunk.data_dict['Color info'] == 'Индексированные значения':
+            chunk.data_dict['Significant info red'] = chunk.raw_chunk_data[0]
+            chunk.data_dict['Significant info green'] = chunk.raw_chunk_data[1]
+            chunk.data_dict['Significant info blue'] = chunk.raw_chunk_data[2]
+        elif ihdr_chunk.data_dict['Color info'] == 'Grayscale + alpha channel':
+            chunk.data_dict['Significant info grayscale'] = chunk.raw_chunk_data[0]
+            chunk.data_dict['Significant info alpha'] = chunk.raw_chunk_data[1]
+        else:
+            chunk.data_dict['Significant info red'] = chunk.raw_chunk_data[0]
+            chunk.data_dict['Significant info green'] = chunk.raw_chunk_data[1]
+            chunk.data_dict['Significant info blue'] = chunk.raw_chunk_data[2]
+            chunk.data_dict['Significant info alpha'] = chunk.raw_chunk_data[3]
+
 
     def sRGBanalize(self, chunk):
         chunk.data_dict['Rendering intent'] = chunk.raw_chunk_data[0]
@@ -147,9 +171,6 @@ class PngFile:
         else:
             chunk.data_dict['Pixels per unknow unit, X'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big')
             chunk.data_dict['Pixels per unknow unit, Y'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big')
-
-    def sBITanalize(self, chunk):
-        pass
 
     def iCCPanalize(self, chunk):
         index = 0
@@ -206,6 +227,26 @@ class PngFile:
             chunk.data_dict['Gray'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
         elif ihdr_chunk.data_dict['Color info'] == 'RGB':
             chunk.data_dict['RGB'] = tuple([chunk.raw_chunk_data[0], chunk.raw_chunk_data[1], chunk.raw_chunk_data[2]])
+
+    def sPLTanalize(self, chunk):
+        index = 0
+        for i in range(len(chunk.raw_chunk_data)):
+            if chunk.raw_chunk_data[i] == 0:
+                index = i
+                break
+        sample_depth = chunk.raw_chunk_data[index + 1]
+        if sample_depth == 8:
+            chunk.data_dict['sPLT info red'] = chunk.raw_chunk_data[index + 2]
+            chunk.data_dict['sPLT info green'] = chunk.raw_chunk_data[index + 3]
+            chunk.data_dict['sPLT info blue'] = chunk.raw_chunk_data[index + 4]
+            chunk.data_dict['sPLT info alpha'] = chunk.raw_chunk_data[index + 5]
+            chunk.data_dict['sPLT info freuency'] = int.from_bytes(chunk.raw_chunk_data[index + 6: index + 8], 'big')
+        else:
+            chunk.data_dict['sPLT info red'] = int.from_bytes(chunk.raw_chunk_data[index + 2: index + 4], 'big')
+            chunk.data_dict['sPLT info green'] = int.from_bytes(chunk.raw_chunk_data[index + 5: index + 6], 'big')
+            chunk.data_dict['sPLT info blue'] = int.from_bytes(chunk.raw_chunk_data[index + 7: index + 8], 'big')
+            chunk.data_dict['sPLT info alpha'] = int.from_bytes(chunk.raw_chunk_data[index + 9: index + 10], 'big')
+            chunk.data_dict['sPLT info alpha'] = int.from_bytes(chunk.raw_chunk_data[index + 9: index + 10], 'big')
 
     def IENDanalize(self, chunk):
         if chunk.type == 'IEND':
