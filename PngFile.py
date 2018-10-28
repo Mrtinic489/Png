@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
 from Chunk import Chunk
 import zlib
+import sys
 
 
 class PngFile:
@@ -12,10 +12,10 @@ class PngFile:
                 self.header = self.file[:8]
                 if self.header[0] != 137 or self.header[1:4].decode('ascii') != 'PNG':
                     print('Not png')
-                    exit(-1)
+                    sys.exit()
         except Exception:
             print('Fie not found')
-            exit(-1)
+            sys.exit()
         self.list_of_raw_chunks = []
         self.find_chunks()
         self.decoded_chunks = []
@@ -74,9 +74,16 @@ class PngFile:
             self.list_of_raw_chunks.append(self.file[index:index + 12 + length])
             index += 12 + length
 
+    def from_bytes(self, byte_list, args):
+        result = []
+        for i in range(len(args) - 1):
+            result.append(int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
+        return result
+
     def IHDRanalize(self, chunk):
-        chunk.data_dict['Width'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big')
-        chunk.data_dict['Height'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big')
+        from_bytes = self.from_bytes(chunk.raw_chunk_data, [0, 4, 8])
+        chunk.data_dict['Width'] = from_bytes[0]
+        chunk.data_dict['Height'] = from_bytes[1]
         chunk.data_dict['Bit depth'] = chunk.raw_chunk_data[8]
         color_info = chunk.raw_chunk_data[9]
         if color_info == 0:
@@ -108,7 +115,7 @@ class PngFile:
             while len(bin_number) < 8:
                 bin_number = '0' + bin_number
             bin_number = bin_number[::-1]
-            data += bin_number
+            data.join(bin_number)
             chunk.data_dict['data'] = data
 
     def PLTEanalize(self, chunk):
@@ -117,27 +124,29 @@ class PngFile:
                 tuple([chunk.raw_chunk_data[i], chunk.raw_chunk_data[i + 1], chunk.raw_chunk_data[i + 2]])
 
     def bKGDanalize(self, ihdr_chunk, chunk):
+        from_bytes = self.from_bytes(chunk.raw_chunk_data, [0, 2, 4, 6])
         if ihdr_chunk.data_dict['Color info'] == 'Индексированные значения':
             chunk.data_dict['Pallete index'] = chunk.raw_chunk_data[0]
         elif ihdr_chunk.data_dict['Color info'] == 'Grayscale' or ihdr_chunk.data_dict['Color info'] == 'Grayscale + alpha channel':
-            chunk.data_dict['Gray'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
+            chunk.data_dict['Gray'] = from_bytes[0]
         else:
-            chunk.data_dict['Red'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
-            chunk.data_dict['Green'] = int.from_bytes(chunk.raw_chunk_data[2:4], 'big')
-            chunk.data_dict['Blue'] = int.from_bytes(chunk.raw_chunk_data[4:6], 'big')
+            chunk.data_dict['Red'] = from_bytes[0]
+            chunk.data_dict['Green'] = from_bytes[1]
+            chunk.data_dict['Blue'] = from_bytes[2]
 
     def cHRManalize(self, chunk):
-        chunk.data_dict['White point x'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big') / 100000
-        chunk.data_dict['White point y'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big') / 100000
-        chunk.data_dict['Red x'] = int.from_bytes(chunk.raw_chunk_data[8:12], 'big') / 100000
-        chunk.data_dict['Red y'] = int.from_bytes(chunk.raw_chunk_data[12:16], 'big') / 100000
-        chunk.data_dict['Green x'] = int.from_bytes(chunk.raw_chunk_data[16:20], 'big') / 100000
-        chunk.data_dict['Green y'] = int.from_bytes(chunk.raw_chunk_data[20:24], 'big') / 100000
-        chunk.data_dict['Blue x'] = int.from_bytes(chunk.raw_chunk_data[24:28], 'big') / 100000
-        chunk.data_dict['Blue y'] = int.from_bytes(chunk.raw_chunk_data[28:32], 'big') / 100000
+        from_bytes = self.from_bytes(chunk.raw_chunk_data, [0, 4, 8, 12, 16, 20, 24, 28, 32])
+        chunk.data_dict['White point x'] = from_bytes[0] / 100000
+        chunk.data_dict['White point y'] = from_bytes[1] / 100000
+        chunk.data_dict['Red x'] = from_bytes[2] / 100000
+        chunk.data_dict['Red y'] = from_bytes[3] / 100000
+        chunk.data_dict['Green x'] = from_bytes[4] / 100000
+        chunk.data_dict['Green y'] = from_bytes[5] / 100000
+        chunk.data_dict['Blue x'] = from_bytes[6] / 100000
+        chunk.data_dict['Blue y'] = from_bytes[7] / 100000
 
     def gAMAanalize(self, chunk):
-        chunk.data_dict['Gamma value'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big') / 100000
+        chunk.data_dict['Gamma value'] = self.from_bytes(chunk.raw_chunk_data, [0, 4])[0] / 100000
 
     def hISTanalize(self, chunk):
         for i in range(0, len(chunk.raw_chunk_data), 2):
@@ -164,13 +173,14 @@ class PngFile:
         chunk.data_dict['Rendering intent'] = chunk.raw_chunk_data[0]
 
     def pHYsanalize(self, chunk):
+        from_bytes = self.from_bytes(chunk.raw_chunk_data, [0, 4, 8])
         chunk.data_dict['Unit specifire'] = chunk.raw_chunk_data[8]
         if chunk.data_dict['Unit specifire'] == 1:
-            chunk.data_dict['Pixels per meter, X'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big')
-            chunk.data_dict['Pixels per meter, Y'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big')
+            chunk.data_dict['Pixels per meter, X'] = from_bytes[0]
+            chunk.data_dict['Pixels per meter, Y'] = from_bytes[1]
         else:
-            chunk.data_dict['Pixels per unknow unit, X'] = int.from_bytes(chunk.raw_chunk_data[:4], 'big')
-            chunk.data_dict['Pixels per unknow unit, Y'] = int.from_bytes(chunk.raw_chunk_data[4:8], 'big')
+            chunk.data_dict['Pixels per unknow unit, X'] = from_bytes[0]
+            chunk.data_dict['Pixels per unknow unit, Y'] = from_bytes[1]
 
     def iCCPanalize(self, chunk):
         index = 0
@@ -211,7 +221,7 @@ class PngFile:
         chunk.data_dict[result_str[0]] = result_str[1]
 
     def tIMEamalize(self, chunk):
-        chunk.data_dict['Year'] = int.from_bytes(chunk.raw_chunk_data[:2], 'big')
+        chunk.data_dict['Year'] = self.from_bytes(chunk.raw_chunk_data, [0, 2])[0]
         chunk.data_dict['Month'] = chunk.raw_chunk_data[2]
         chunk.data_dict['Day'] = chunk.raw_chunk_data[3]
         chunk.data_dict['Hour'] = chunk.raw_chunk_data[4]
@@ -240,7 +250,7 @@ class PngFile:
             chunk.data_dict['sPLT info green'] = chunk.raw_chunk_data[index + 3]
             chunk.data_dict['sPLT info blue'] = chunk.raw_chunk_data[index + 4]
             chunk.data_dict['sPLT info alpha'] = chunk.raw_chunk_data[index + 5]
-            chunk.data_dict['sPLT info freuency'] = int.from_bytes(chunk.raw_chunk_data[index + 6: index + 8], 'big')
+            chunk.data_dict['sPLT info freuency'] = self.from_bytes(chunk.raw_chunk_data, [index + 6, index + 8])
         else:
             chunk.data_dict['sPLT info red'] = int.from_bytes(chunk.raw_chunk_data[index + 2: index + 4], 'big')
             chunk.data_dict['sPLT info green'] = int.from_bytes(chunk.raw_chunk_data[index + 5: index + 6], 'big')

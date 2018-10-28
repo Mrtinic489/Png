@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 class Chunk:
     def __init__(self, bytestr):
         self.length = int.from_bytes(bytestr[:4], 'big')
