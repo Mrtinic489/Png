@@ -74,10 +74,14 @@ class PngFile:
             self.list_of_raw_chunks.append(self.file[index:index + 12 + length])
             index += 12 + length
 
-    def from_bytes(self, byte_list, args):
+    def from_bytes(self, byte_list, args, f = None):
         result = []
-        for i in range(len(args) - 1):
-            result.append(int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
+        if f == None:
+            for i in range(len(args) - 1):
+                result.append(int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
+        else:
+            for i in range(0, len(args) - 1, 2):
+                result.append(int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
         return result
 
     def IHDRanalize(self, chunk):
@@ -250,13 +254,13 @@ class PngFile:
             chunk.data_dict['sPLT info green'] = chunk.raw_chunk_data[index + 3]
             chunk.data_dict['sPLT info blue'] = chunk.raw_chunk_data[index + 4]
             chunk.data_dict['sPLT info alpha'] = chunk.raw_chunk_data[index + 5]
-            chunk.data_dict['sPLT info freuency'] = self.from_bytes(chunk.raw_chunk_data, [index + 6, index + 8])
+            chunk.data_dict['sPLT info freuency'] = self.from_bytes(chunk.raw_chunk_data, [index + 6, index + 8])[0]
         else:
-            chunk.data_dict['sPLT info red'] = int.from_bytes(chunk.raw_chunk_data[index + 2: index + 4], 'big')
-            chunk.data_dict['sPLT info green'] = int.from_bytes(chunk.raw_chunk_data[index + 5: index + 6], 'big')
-            chunk.data_dict['sPLT info blue'] = int.from_bytes(chunk.raw_chunk_data[index + 7: index + 8], 'big')
-            chunk.data_dict['sPLT info alpha'] = int.from_bytes(chunk.raw_chunk_data[index + 9: index + 10], 'big')
-            chunk.data_dict['sPLT info alpha'] = int.from_bytes(chunk.raw_chunk_data[index + 9: index + 10], 'big')
+            from_bytes = self.from_bytes(chunk.raw_chunk_data, [index + i for i in[2, 4, 5, 6, 7, 8, 9, 10]], True)
+            chunk.data_dict['sPLT info red'] = from_bytes[0]
+            chunk.data_dict['sPLT info green'] = from_bytes[1]
+            chunk.data_dict['sPLT info blue'] = from_bytes[2]
+            chunk.data_dict['sPLT info alpha'] = from_bytes[3]
 
     def IENDanalize(self, chunk):
         if chunk.type == 'IEND':
