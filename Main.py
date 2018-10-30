@@ -6,5 +6,5 @@ if __name__ == '__main__':
     print('Enter file name:')
     filename = input()
     file = PngFile(filename)
-    file.print_info()
+    file.print_headers_and_data()
 

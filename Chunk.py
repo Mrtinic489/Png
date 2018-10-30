@@ -4,4 +4,3 @@ class Chunk:
         self.type = bytestr[4:8].decode()
         self.raw_chunk_data = bytestr[8: 8 + self.length]
         self.crc = bytestr[8 + self.length:]
-        self.data_dict = dict()

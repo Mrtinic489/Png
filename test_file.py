@@ -7,9 +7,9 @@ class Test(unittest.TestCase):
 
     def test_for_init(self):
         png_file = PngFile('TestPictures/basi0g01.png')
-        self.assertEqual(len(png_file.list_of_raw_chunks), 4)
-        self.assertEqual(Chunk(png_file.list_of_raw_chunks[0]).type, 'IHDR')
-        self.assertEqual(Chunk(png_file.list_of_raw_chunks[-1]).type, 'IEND')
+        self.assertEqual(len(png_file.list_of_chunks), 4)
+        self.assertEqual(Chunk(png_file.list_of_chunks[0]).type, 'IHDR')
+        self.assertEqual(Chunk(png_file.list_of_chunks[-1]).type, 'IEND')
 
     def test_for_ihdranalize(self):
         png_file = PngFile('TestPictures/basi0g01.png')
