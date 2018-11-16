@@ -17,6 +17,7 @@ from Chunks.sBIT import sBIT
 from Chunks.hIST import hIST
 from Chunks.sPLT import sPLT
 from Chunks.IEND import IEND
+from Chunks.IDAT import IDAT
 import sys
 
 
@@ -56,6 +57,8 @@ class PngFile:
             return IHDR(chunk.raw_chunk_data)
         elif chunk.type == 'PLTE':
             return PLTE(chunk.raw_chunk_data)
+        elif chunk.type == 'IDAT':
+            return IDAT(self.chunks_dict['IHDR'][0], chunk.raw_chunk_data)
         elif chunk.type == 'iTXt':
             return iTXt(chunk.raw_chunk_data)
         elif chunk.type == 'tEXt':

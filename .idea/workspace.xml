@@ -3,29 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="60a1d009-8cc2-433f-b9c8-6373b63bf083" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Byte_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Byte_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chunks/IDAT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/IDAT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/IEND.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/IEND.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/IHDR.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/IHDR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/PLTE.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/PLTE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/bKGD.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/bKGD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/cHRM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/cHRM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/gAMA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/gAMA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/hIST.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/hIST.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/iCCP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/iCCP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/iTXt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/iTXt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/pHYs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/pHYs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/sBIT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/sBIT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/sPLT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/sPLT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/sRGB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/sRGB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/tEXt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/tEXt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/tIME.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/tIME.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/tRNS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/tRNS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/zTXt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/zTXt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PngFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/PngFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tasks" beforeDir="false" afterPath="$PROJECT_DIR$/Tasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,10 +22,11 @@
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_physanalize.coverage" NAME="Unittests for test_file.Test.test_for_physanalize Coverage Results" MODIFIED="1540279608475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_iendanalize.coverage" NAME="Unittests for test_file.Test.test_for_iendanalize Coverage Results" MODIFIED="1540028130662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_trnsanalize.coverage" NAME="Unittests for test_file.Test.test_for_trnsanalize Coverage Results" MODIFIED="1540278994784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Png$Main.coverage" NAME="Main Coverage Results" MODIFIED="1540890036784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Png$Main.coverage" NAME="Main Coverage Results" MODIFIED="1542380123385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_init.coverage" NAME="Unittests for test_file.Test.test_for_init Coverage Results" MODIFIED="1540026988897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$PngFile.coverage" NAME="PngFile Coverage Results" MODIFIED="1540890022136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_ihdranalize.coverage" NAME="Unittests for test_file.Test.test_for_ihdranalize Coverage Results" MODIFIED="1540027812427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Png$Interface.coverage" NAME="Interface Coverage Results" MODIFIED="1542371971011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_timeanalize.coverage" NAME="Unittests for test_file.Test.test_for_timeanalize Coverage Results" MODIFIED="1540279222846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test_test_for_idatanalize.coverage" NAME="Unittests for test_file.Test.test_for_idatanalize Coverage Results" MODIFIED="1540028336350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Png$Unittests_for_test_file_Test.coverage" NAME="Unittests for test_file.Test Coverage Results" MODIFIED="1540027550449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -51,38 +34,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.py">
+      <file leaf-file-name="IDAT.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Chunks/IDAT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PngFile.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Interface.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interface.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s04n3p01.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestPictures/s04n3p01.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="s07n3p02.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestPictures/s07n3p02.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="s05n3p02.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestPictures/s05n3p02.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="PngFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PngFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sBIT.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Chunks/sBIT.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chunk.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Chunk.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+            <state relative-caret-position="663">
+              <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -127,15 +122,19 @@
         <option value="$PROJECT_DIR$/Chunks/PLTE.py" />
         <option value="$PROJECT_DIR$/Chunks/sPLT.py" />
         <option value="$PROJECT_DIR$/Chunks/sBIT.py" />
-        <option value="$PROJECT_DIR$/Chunks/IDAT.py" />
         <option value="$PROJECT_DIR$/Tasks" />
         <option value="$PROJECT_DIR$/Chunks/bKGD.py" />
         <option value="$PROJECT_DIR$/Chunks/tEXt.py" />
         <option value="$PROJECT_DIR$/Chunks/tRNS.py" />
-        <option value="$PROJECT_DIR$/Byte_parser.py" />
-        <option value="$PROJECT_DIR$/Chunk.py" />
+        <option value="$PROJECT_DIR$/fixed_haffman_dict" />
+        <option value="$PROJECT_DIR$/haffman_len" />
+        <option value="$PROJECT_DIR$/haffman_delta" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/PngFile.py" />
+        <option value="$PROJECT_DIR$/Chunk.py" />
+        <option value="$PROJECT_DIR$/Byte_parser.py" />
+        <option value="$PROJECT_DIR$/Interface.py" />
+        <option value="$PROJECT_DIR$/Chunks/IDAT.py" />
       </list>
     </option>
   </component>
@@ -149,8 +148,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="325" />
-    <option name="y" value="30" />
+    <option name="x" value="315" />
+    <option name="y" value="440" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -169,6 +168,11 @@
               <item name="Png" type="b2602c69:ProjectViewProjectNode" />
               <item name="Png" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Png" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Png" type="462c0819:PsiDirectoryNode" />
+              <item name="TestPictures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -182,13 +186,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\PycharmProjects\Png\TestPictures" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\Png\TestPictures" />
       <recent name="C:\Users\User\PycharmProjects\Png\Pictures" />
       <recent name="C:\Users\User\PycharmProjects\Png\ChunksData" />
       <recent name="C:\Users\User\PycharmProjects\Png" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\Png\TestPictures" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -204,6 +209,25 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.Main">
+    <configuration name="Interface" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Png" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Png" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -270,34 +294,20 @@
       <option name="_new_target" value="&quot;test_file.Test.test_for_timeanalize&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <configuration name="Unittests for test_file.Test.test_for_trnsanalize" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Png" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_file.Test.test_for_trnsanalize&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for test_file.Test.test_for_trnsanalize" />
       <item itemvalue="Python tests.Unittests for test_file.Test.test_for_timeanalize" />
       <item itemvalue="Python tests.Unittests for test_file.Test.test_for_physanalize" />
       <item itemvalue="Python.PngFile" />
       <item itemvalue="Python.Main" />
+      <item itemvalue="Python.Interface" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Interface" />
         <item itemvalue="Python.PngFile" />
         <item itemvalue="Python tests.Unittests for test_file.Test.test_for_physanalize" />
         <item itemvalue="Python tests.Unittests for test_file.Test.test_for_timeanalize" />
-        <item itemvalue="Python tests.Unittests for test_file.Test.test_for_trnsanalize" />
       </list>
     </recent_temporary>
   </component>
@@ -351,13 +361,13 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.43926555" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32985073" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32909605" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32768363" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.43926555" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27449664" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932885" visible="true" weight="0.43926555" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3442953" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -370,30 +380,31 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.32909605" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32985073" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3283582" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
-      <window_info anchor="right" id="SciView" order="0" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32985073" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3161074" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32768363" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32909605" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.43926555" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,163 +415,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="38" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChunksData/IHDRdata.py" />
-    <entry file="file://$PROJECT_DIR$/ChunksData/IDATdata.py" />
-    <entry file="file://$PROJECT_DIR$/ChunksData/PLTEdata.py" />
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChunksData/IHDRdata.py" />
-    <entry file="file://$PROJECT_DIR$/ChunksData/IDATdata.py" />
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChunksData/PLTEdata.py" />
-    <entry file="file://$PROJECT_DIR$/ChunksData/IDATdata.py" />
-    <entry file="file://$PROJECT_DIR$/ChunksData/IHDRdata.py" />
-    <entry file="file://$PROJECT_DIR$/Pictures/1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="681" selection-start-line="681" selection-end-line="681" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/g07n3p04.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_file.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/IEND.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/iTXt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tasks">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Chunks/gAMA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -579,20 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/IDAT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/IHDR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="33" column="66" lean-forward="true" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -631,30 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/tEXt.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/tRNS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/zTXt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Byte_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Chunks/cHRM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -669,13 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chunk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Chunks/sBIT.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -683,17 +496,185 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/ps2n0g08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basi3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basi0g02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basi4a16.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s01n3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s02n3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/PngSuite.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/oi9n2c16.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/oi9n0g16.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/zTXt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/tRNS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/tEXt.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixed_haffman_dict">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haffman_delta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haffman_len">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s02i3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s04i3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s40n3p04.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/tbbn2c16.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basi0g08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basi0g01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s01i3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s03i3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s05i3p02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s03n3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s06n3p02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/IHDR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" column="71" lean-forward="true" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Byte_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PngFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="663">
+          <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/864858637/PyQt5/QtWidgets/QWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="550" column="8" selection-start-line="550" selection-start-column="8" selection-end-line="550" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s04n3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s07n3p02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s05n3p02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/IDAT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
