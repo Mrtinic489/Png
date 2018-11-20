@@ -58,7 +58,10 @@ class PngFile:
         elif chunk.type == 'PLTE':
             return PLTE(chunk.raw_chunk_data)
         elif chunk.type == 'IDAT':
-            return IDAT(self.chunks_dict['IHDR'][0], chunk.raw_chunk_data)
+            if 'PLTE' in self.chunks_dict.keys():
+                return IDAT(self.chunks_dict['IHDR'][0],self.chunks_dict['PLTE'][0], chunk.raw_chunk_data)
+            else:
+                return IDAT(self.chunks_dict['IHDR'][0], None, chunk.raw_chunk_data)
         elif chunk.type == 'iTXt':
             return iTXt(chunk.raw_chunk_data)
         elif chunk.type == 'tEXt':

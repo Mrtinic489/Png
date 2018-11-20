@@ -6,6 +6,7 @@ def return_args():
     parser = argparse.ArgumentParser('Key parser')
     parser.add_argument('--headers', action='store_true')
     parser.add_argument('--data', action='store_true')
+    parser.add_argument('--all', action='store_true')
     parser.add_argument('--file', type=str)
     args = parser.parse_args()
     return args
@@ -15,7 +16,7 @@ if __name__ == '__main__':
     args = return_args()
     if not args.file is None:
         file = PngFile(args.file)
-        if args.headers and args.data:
+        if args.all:
             file.print_headers_and_data()
         elif args.headers:
             file.print_headers()

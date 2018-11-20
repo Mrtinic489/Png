@@ -9,9 +9,9 @@ class tIME:
         self.analize()
 
     def analize(self):
-        self.parsed_data['Year'] = parse_bytes(self.parsed_data, [0, 2])[0]
-        self.parsed_data['Month'] = self.parsed_data[2]
-        self.parsed_data['Day'] = self.parsed_data[3]
-        self.parsed_data['Hour'] = self.parsed_data[4]
-        self.parsed_data['Minute'] = self.parsed_data[5]
-        self.parsed_data['Second'] = self.parsed_data[6]
+        self.parsed_data['Year'] = parse_bytes(self.byte_data, [0, 2])[0]
+        self.parsed_data['Month'] = self.byte_data[2]
+        self.parsed_data['Day'] = self.byte_data[3]
+        self.parsed_data['Hour'] = self.byte_data[4]
+        self.parsed_data['Minute'] = self.byte_data[5]
+        self.parsed_data['Second'] = self.byte_data[6]
