@@ -41,7 +41,7 @@ class PngFile:
 
     def find_chunks(self):
         index = 8
-        while(index < len(self.file)):
+        while index < len(self.file):
             length = parse_bytes(self.file, [index, index + 4])[0]
             self.list_of_chunks.append(Chunk(self.file[index:index + 12 + length]))
             index += 12 + length

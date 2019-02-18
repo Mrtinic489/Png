@@ -2,16 +2,156 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60a1d009-8cc2-433f-b9c8-6373b63bf083" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/.coverage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Png.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Png.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chunks/IDAT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/IDAT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chunks/tIME.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/tIME.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chunks/IHDR.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/IHDR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chunks/PLTE.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chunks/PLTE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PngFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/PngFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tasks" beforeDir="false" afterPath="$PROJECT_DIR$/Tasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml-4.2.5.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml-4.2.5.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml-4.2.5.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml-4.2.5.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml-4.2.5.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/ElementInclude.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/_elementpath.cp36-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/_elementpath.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/builder.cp36-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/builder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/cssselect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/doctestcompare.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/etree.cp36-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/etree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/etree_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/ElementSoup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/_diffcommand.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/_html5builder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/_setmixin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/builder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/clean.cp36-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/clean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/defs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/diff.cp36-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/diff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/formfill.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/html5parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/soupparser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/html/usedoctest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/__init__.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/c14n.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/config.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/dtdvalid.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/etree_defs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/etreepublic.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/htmlparser.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libexslt/exslt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libexslt/exsltconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libexslt/exsltexports.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libexslt/libexslt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/DOCBparser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/HTMLparser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/HTMLtree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/SAX.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/SAX2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/c14n.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/catalog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/chvalid.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/debugXML.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/dict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/encoding.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/entities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/globals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/hash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/list.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/nanoftp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/nanohttp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/parser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/parserInternals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/pattern.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/relaxng.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/schemasInternals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/schematron.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/threads.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/tree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/uri.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/valid.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xinclude.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xlink.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlIO.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlautomata.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlerror.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlexports.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlmemory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlmodule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlreader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlregexp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlsave.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlschemas.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlschemastypes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlstring.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlunicode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlversion.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xmlwriter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xpath.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xpathInternals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxml/xpointer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/attributes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/documents.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/extensions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/extra.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/functions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/imports.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/keys.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/libxslt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/namespaces.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/numbersInternals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/preproc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/security.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/templates.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/transform.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/trio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/triodef.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/variables.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/win32config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/xslt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/xsltInternals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/xsltconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/xsltexports.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/xsltlocale.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/libxslt/xsltutils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/lxml-version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/relaxng.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/schematron.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/tree.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/uri.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/xinclude.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/xmlerror.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/xmlparser.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/xmlschema.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/xpath.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/includes/xslt.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/rng/iso-schematron.rng" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/lxml.etree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/lxml.etree_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/objectify.cp36-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/pyclasslookup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/sax.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/lxml/usedoctest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +178,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Byte_parser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Byte_parser.py">
+      <file leaf-file-name="Interface.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="1190">
+              <caret line="84" column="16" lean-forward="true" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,20 +193,34 @@
       <file leaf-file-name="PngFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PngFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="-56">
+              <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IDAT.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Chunks/IDAT.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="61" column="21" lean-forward="true" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interface.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Interface.py">
+      <file leaf-file-name="s05n3p02.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestPictures/s05n3p02.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="Byte_parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Byte_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+            <state relative-caret-position="102">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -94,7 +251,6 @@
         <option value="$PROJECT_DIR$/ChunksData/IDATdata.py" />
         <option value="$PROJECT_DIR$/ChunksData/PLTEdata.py" />
         <option value="$PROJECT_DIR$/Chunks/IEND.py" />
-        <option value="$PROJECT_DIR$/Chunks/IHDR.py" />
         <option value="$PROJECT_DIR$/Chunks/zTXt.py" />
         <option value="$PROJECT_DIR$/Chunks/iTXt.py" />
         <option value="$PROJECT_DIR$/Chunks/iCCP.py" />
@@ -103,7 +259,6 @@
         <option value="$PROJECT_DIR$/Chunks/gAMA.py" />
         <option value="$PROJECT_DIR$/Chunks/cHRM.py" />
         <option value="$PROJECT_DIR$/Chunks/pHYs.py" />
-        <option value="$PROJECT_DIR$/Chunks/PLTE.py" />
         <option value="$PROJECT_DIR$/Chunks/sPLT.py" />
         <option value="$PROJECT_DIR$/Chunks/sBIT.py" />
         <option value="$PROJECT_DIR$/Chunks/bKGD.py" />
@@ -114,13 +269,15 @@
         <option value="$PROJECT_DIR$/haffman_delta" />
         <option value="$PROJECT_DIR$/Chunk.py" />
         <option value="$PROJECT_DIR$/Byte_parser.py" />
-        <option value="$PROJECT_DIR$/PngFile.py" />
         <option value="$PROJECT_DIR$/Tasks" />
         <option value="$PROJECT_DIR$/Chunks/tIME.py" />
-        <option value="$PROJECT_DIR$/Chunks/IDAT.py" />
         <option value="$PROJECT_DIR$/test_file.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/Chunks/IHDR.py" />
+        <option value="$PROJECT_DIR$/Chunks/PLTE.py" />
         <option value="$PROJECT_DIR$/Interface.py" />
+        <option value="$PROJECT_DIR$/PngFile.py" />
+        <option value="$PROJECT_DIR$/Chunks/IDAT.py" />
       </list>
     </option>
   </component>
@@ -134,8 +291,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="302" />
-    <option name="y" value="112" />
+    <option name="x" value="300" />
+    <option name="y" value="110" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -154,6 +311,11 @@
               <item name="Png" type="b2602c69:ProjectViewProjectNode" />
               <item name="Png" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Png" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Png" type="462c0819:PsiDirectoryNode" />
+              <item name="TestPictures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -164,8 +326,10 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/User/PycharmProjects/Png/Chunks/IDAT.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -334,8 +498,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32909605" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32768363" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932885" visible="true" weight="0.43926555" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3979866" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932885" visible="true" weight="0.33474576" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18456376" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -387,41 +551,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestPictures/tbbn2c16.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basi0g08.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basi0g01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/s01i3p01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/s03i3p01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/s05i3p02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/864858637/PyQt5/QtWidgets/QWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="550" column="8" selection-start-line="550" selection-start-column="8" selection-end-line="550" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/s05n3p02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/s39n3p04.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestPictures/s01n3p01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/s03n3p01.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/TestPictures/s04n3p01.png">
@@ -457,20 +587,8 @@
     <entry file="file://$PROJECT_DIR$/TestPictures/basn6a16.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tasks">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basn2c08.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g04.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/TestPictures/oi4n2c16.png">
       <provider selected="true" editor-type-id="images" />
@@ -484,13 +602,6 @@
     <entry file="file://$PROJECT_DIR$/TestPictures/s40n3p04.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/IHDR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="21" column="71" lean-forward="true" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestPictures/s38n3p04.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -498,9 +609,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/TestPictures/basn4a08.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPictures/basn3p08.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/TestPictures/basn6a08.png">
@@ -539,16 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chunks/IDAT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.coverage">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -556,9 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="76" column="16" lean-forward="true" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -569,6 +664,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s35n3p04.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/f04n0g08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/f01n2c08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/PLTE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn3p08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunk.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chunks/IHDR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g04.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn2c08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/basn0g01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/f02n2c08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s03n3p01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/f02n0g08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPictures/f01n0g08.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PngFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="84" column="16" lean-forward="true" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Byte_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -576,20 +741,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PngFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/TestPictures/s05n3p02.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interface.py">
+    <entry file="file://$PROJECT_DIR$/Chunks/IDAT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        <state relative-caret-position="170">
+          <caret line="61" column="21" lean-forward="true" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
