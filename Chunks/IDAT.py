@@ -17,25 +17,67 @@ class IDAT:
         self.parsed_data = dict()
         self.analize()
 
-    def interlace(self):
-        pass
+    def interlace(self, byte_data):
+        dict_of_positions = dict()
+        dict_of_positions[1] = [8, 8, 1, 1]
+        dict_of_positions[2] = [8, 8, 1, 5]
+        dict_of_positions[3] = [8, 4, 5, 1]
+        dict_of_positions[4] = [4, 4, 1, 3]
+        dict_of_positions[5] = [4, 2, 3, 1]
+        dict_of_positions[6] = [2, 2, 1, 2]
+        dict_of_positions[7] = [2, 1, 2, 1]
 
-    def analize(self):
-        decompress_bytes = zlib.decompress(self.byte_data)
-        width = self.find_width_in_bytes()
-        raw_list_of_pixels = []
-        for item in decompress_bytes:
-            print(from_dec_to_bin(item))
+        scanlines_and_pixels_count = []
+
+        for i in range(1, 8):
+            scanlines_count = (self.height + dict_of_positions[i][0] - dict_of_positions[i][2]) // dict_of_positions[i][0]
+            pixels_count = (self.width + dict_of_positions[i][1] - dict_of_positions[i][3]) // dict_of_positions[i][1]
+            scanlines_and_pixels_count.append(tuple([scanlines_count, pixels_count]))
+
+        bytes_dict = dict()
+        bytes_dict[1] = []
+        bytes_dict[2] = []
+        bytes_dict[3] = []
+        bytes_dict[4] = []
+        bytes_dict[5] = []
+        bytes_dict[6] = []
+        bytes_dict[7] = []
+
+        total_index = 0
+        for index, item in enumerate(scanlines_and_pixels_count):
+            scanline_length = self.find_scanline_length_fro_interlace(item[1])
+            for i in range(item[0]):
+                byte_str = byte_data[total_index:total_index + scanline_length]
+                result_str = ''
+                for item in byte_str:
+                    result_str += from_dec_to_bin(item)
+                bytes_dict[index + 1].append(result_str)
+                total_index += scanline_length
+        list_of_all_pixels = []
+        for pair in bytes_dict.items():
+            list_of_all_pixels.append(self.decode_interlace(pair[1], scanlines_and_pixels_count[pair[0] - 1][1]))
+
+        result = []
         for j in range(self.height):
-            line = ''
-            for i in range(width):
-                line += from_dec_to_bin(decompress_bytes[j * width + i])
-            raw_list_of_pixels.append(line)
-        self.parsed_data['Result of decoding'] = self.decoding(raw_list_of_pixels)
+            line = []
+            for i in range(self.width):
+                line.append([])
+            result.append(line)
 
-    def decoding(self, raw_list_of_pixels):
+        for index, item in enumerate(list_of_all_pixels):
+            for j, line in enumerate(item):
+                times_in_line = dict_of_positions[index + 1][0]
+                times_in_coloum = dict_of_positions[index + 1][1]
+                first_in_line = dict_of_positions[index + 1][2] - 1
+                first_in_coloum = dict_of_positions[index + 1][3] - 1
+                for i, pixel in enumerate(line):
+                    result[first_in_line + j * times_in_line][first_in_coloum + i * times_in_coloum] = pixel
+
+        self.parsed_data['Result of decoding'] = result
+
+    def decode_interlace(self, raw_list_of_pixels, count_of_pixels):
         list_of_pixels = []
-        width = self.find_width_in_bytes()
+        width = math.ceil(count_of_pixels * self.return_size_of_pixel() * self.bit_depth / 8) + 1
         size = self.return_size_of_pixel()
         for index, line in enumerate(raw_list_of_pixels):
             filter = from_bin_to_dec(line[:8])
@@ -43,7 +85,7 @@ class IDAT:
             sub_line = []
             for i in range(8, width * 8, self.bit_depth):
                 sub_line.append(from_bin_to_dec(line[i:i+self.bit_depth]))
-            for i in range(self.width):
+            for i in range(count_of_pixels):
                 pixel = []
                 for j in range(size):
                     pixel.append(sub_line[i * size + j])
@@ -51,6 +93,49 @@ class IDAT:
             pixel_line = self.filter(filter, pixel_line, list_of_pixels, index)
             list_of_pixels.append(pixel_line)
         return list_of_pixels
+
+    def find_scanline_length_fro_interlace(self, pixel_count):
+        return math.ceil((pixel_count * self.bit_depth * self.return_size_of_pixel() + 8) / 8)
+
+    def analize(self):
+        zobj = zlib.decompressobj()
+        decompress_bytes = zobj.decompress(self.byte_data)
+        if self.interlaced == 'Adam7 interlace':
+            self.interlace(decompress_bytes)
+            return
+        width = self.find_width_in_bytes()
+        raw_list_of_pixels = []
+        for j in range(self.height):
+            line = ''
+            try:
+                for i in range(width):
+                    line += from_dec_to_bin(decompress_bytes[j * width + i])
+                raw_list_of_pixels.append(line)
+            except Exception:
+                raw_list_of_pixels.append(line)
+        self.parsed_data['Result of decoding'] = self.decoding(raw_list_of_pixels)
+
+    def decoding(self, raw_list_of_pixels):
+        list_of_pixels = []
+        width = self.find_width_in_bytes()
+        size = self.return_size_of_pixel()
+        try:
+            for index, line in enumerate(raw_list_of_pixels):
+                filter = from_bin_to_dec(line[:8])
+                pixel_line = []
+                sub_line = []
+                for i in range(8, width * 8, self.bit_depth):
+                    sub_line.append(from_bin_to_dec(line[i:i+self.bit_depth]))
+                for i in range(self.width):
+                    pixel = []
+                    for j in range(size):
+                        pixel.append(sub_line[i * size + j])
+                    pixel_line.append(self.parse_to_rgb(pixel))
+                pixel_line = self.filter(filter, pixel_line, list_of_pixels, index)
+                list_of_pixels.append(pixel_line)
+            return list_of_pixels
+        except Exception:
+            return list_of_pixels
 
     def filter_1(self, current):
         result_line = []

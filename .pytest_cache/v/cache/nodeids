@@ -5,6 +5,5 @@
   "test_file.py::Test::test_for_ihdranalize",
   "test_file.py::Test::test_for_init",
   "test_file.py::Test::test_for_physanalize",
-  "test_file.py::Test::test_for_plteanalize",
   "test_file.py::Test::test_for_timeanalize"
 ]

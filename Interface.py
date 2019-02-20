@@ -19,11 +19,10 @@ class MainWindow(QWidget):
         grid = QGridLayout()
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
-        if self.Width > 50 or self.Height > 100:
-            scroll_area.setMinimumSize(100, 100)
         scroll_layout = QFormLayout()
         picture = DrawWindow(self.Width, self.Height, self.Scale, self.List_of_pixels)
         scroll_area.setWidget(picture)
+        picture.setMinimumSize(self.Width * self.Scale, self.Height * self.Scale)
         picture.setLayout(scroll_layout)
         scroll_area_for_rgb_info = QScrollArea()
         scroll_area_for_rgb_info.setWidgetResizable(True)
@@ -88,7 +87,10 @@ class DrawWindow(QWidget):
         for y in range(self.Height):
             for x in range(self.Width):
                 pixel = self.List_of_pixels[y][x]
-                color = QColor(*pixel)
+                if len(pixel) == 3:
+                    color = QColor(*pixel)
+                else:
+                    color = QColor(pixel[1], pixel[2], pixel[3], pixel[0])
                 qp.setPen(color)
                 qp.setBrush(color)
                 qp.drawRect(x * self.Scale, y * self.Scale, self.Scale, self.Scale)
@@ -124,13 +126,6 @@ class HistogrammInfo(QWidget):
         self.grid = QGridLayout()
         self.creating_data()
         plot = pyqtgraph.PlotWidget()
-        sorted_keys = sorted(self.data.keys())
-        sorted_values = sorted(self.data.values())
-        for i in range(256):
-            if i not in sorted_keys:
-                sorted_keys.insert(i, i)
-                sorted_values.insert(i, 0)
-        sorted_keys.append(0)
         if self.type_of_hist == 'ALL':
             brush = (150, 150, 150)
         elif self.type_of_hist == 'R':
@@ -139,34 +134,29 @@ class HistogrammInfo(QWidget):
             brush = (0, 255, 0, 80)
         else:
             brush = (0, 0, 255, 80)
-        curve = pyqtgraph.PlotCurveItem(sorted_keys, sorted_values, stepMode=True, fillLevel=-1, brush=brush)
+        curve = pyqtgraph.PlotCurveItem([i for i in range(257)], self.data, stepMode=True, fillLevel=0, brush=brush)
         plot.addItem(curve)
         self.grid.addWidget(plot)
         self.setLayout(self.grid)
         self.show()
 
     def creating_data(self):
-        self.data = dict()
+        self.data = [0 for i in range(256)]
         if self.type_of_hist == 'R':
             index = 0
         elif self.type_of_hist == 'G':
-            index = 1
+             index = 1
         elif self.type_of_hist == 'B':
-            index = 2
+             index = 2
         else:
-            index = 'ALL'
+             index = 'ALL'
         for row in self.list_of_pixels:
             for pixel in row:
                 if type(index) == str:
-                    if sum(pixel)//3 in self.data.keys():
-                        self.data[sum(pixel)//3] += 1
-                    else:
-                        self.data[sum(pixel)//3] = 1
+                    print(pixel)
+                    self.data[sum([pixel[i] for i in range(len(pixel) - 1)]) // 3] += 1
                 else:
-                    if pixel[index] in self.data.keys():
-                        self.data[pixel[index]] += 1
-                    else:
-                        self.data[pixel[index]] = 1
+                    self.data[pixel[index]] += 1
 
 
 if __name__ == '__main__':

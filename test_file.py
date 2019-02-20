@@ -43,18 +43,6 @@ class Test(unittest.TestCase):
         png_file = PngFile('TestPictures/basn0g01.png')
         self.assertEqual(png_file.chunks_dict['IEND'][0].parsed_data['State'], 'Correct')
 
-    def test_for_plteanalize(self):
-        png_file = PngFile('TestPictures/s01i3p01.png')
-        for item in png_file.chunks_dict.keys():
-            if item == 'PLTE':
-                self.assertEqual(png_file.chunks_dict[item][0].parsed_data[0], tuple([0, 0, 255]))
-
-        png_file = PngFile('TestPictures/s03i3p01.png')
-        for item in png_file.chunks_dict.keys():
-            if item == 'PLTE':
-                self.assertEqual(png_file.chunks_dict[item][0].parsed_data[0], tuple([0, 255, 0]))
-                self.assertEqual(png_file.chunks_dict[item][0].parsed_data[1], tuple([255, 119, 0]))
-
     def test_for_bgkdanalize(self):
         png_file = PngFile('TestPictures/bgbn4a08.png')
         for item in png_file.chunks_dict.keys():

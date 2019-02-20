@@ -1,1 +1,3 @@
-{}
+{
+  "test_file.py::Test::test_for_plteanalize": true
+}
