@@ -1,16 +1,29 @@
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QScrollArea, \
+    QWidget, QGridLayout, QFormLayout, QApplication
 from PyQt5.QtGui import QPainter, QColor
 import sys
 from PngFile import PngFile
 import pyqtgraph
+import argparse
 
 
 class MainWindow(QWidget):
 
-    def __init__(self, filename):
+    def __init__(self):
         super().__init__()
-        self.file = PngFile(filename)
+        self.args = self.init_args()
+        try:
+            self.file = PngFile(self.args.filename)
+        except Exception as e:
+            print(e, file=sys.stderr)
+            sys.exit(-1)
         self.initUI()
+
+    def init_args(self):
+        parser = argparse.ArgumentParser(description='Key parser')
+        parser.add_argument('--hist', action='store_true')
+        parser.add_argument('-f', '--filename', type=str)
+        return parser.parse_args()
 
     def initUI(self):
         self.setWindowTitle('Png')
@@ -20,18 +33,14 @@ class MainWindow(QWidget):
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
         scroll_layout = QFormLayout()
-        picture = DrawWindow(self.Width, self.Height, self.Scale, self.List_of_pixels)
+        picture = DrawWindow(self.Width, self.Height,
+                             self.Scale, self.List_of_pixels)
         scroll_area.setWidget(picture)
-        picture.setMinimumSize(self.Width * self.Scale, self.Height * self.Scale)
+        picture.setMinimumSize(self.Width * self.Scale,
+                               self.Height * self.Scale)
         picture.setLayout(scroll_layout)
-        scroll_area_for_rgb_info = QScrollArea()
-        scroll_area_for_rgb_info.setWidgetResizable(True)
-        scroll_area_for_rgb_info.setMinimumSize(150, 150)
-        rgb_info_window = RGBInfoWindow(self.List_of_pixels)
-        scroll_area_for_rgb_info.setWidget(rgb_info_window)
         grid.addWidget(scroll_area, 0, 0, 2, 2)
-        grid.addWidget(scroll_area_for_rgb_info, 0, 2)
-        if sys.argv[-1] == '--hist':
+        if self.args.hist:
             channel_hist = HistogrammInfo(self.List_of_pixels, 'ALL')
             grid.addWidget(channel_hist, 1, 2)
 
@@ -51,9 +60,12 @@ class MainWindow(QWidget):
     def prepearing(self):
         self.Width = self.file.chunks_dict['IHDR'][0].parsed_data['Width']
         self.Height = self.file.chunks_dict['IHDR'][0].parsed_data['Height']
-        self.Bit_depth = self.file.chunks_dict['IHDR'][0].parsed_data['Bit depth']
-        self.Color_info = self.file.chunks_dict['IHDR'][0].parsed_data['Color info']
-        self.Interlaced = self.file.chunks_dict['IHDR'][0].parsed_data['Interlace info']
+        self.Bit_depth = \
+            self.file.chunks_dict['IHDR'][0].parsed_data['Bit depth']
+        self.Color_info = \
+            self.file.chunks_dict['IHDR'][0].parsed_data['Color info']
+        self.Interlaced = \
+            self.file.chunks_dict['IHDR'][0].parsed_data['Interlace info']
         if self.Width <= 1 or self.Height <= 1:
             self.Scale = 16
         elif self.Width <= 2 or self.Height <= 2:
@@ -64,7 +76,8 @@ class MainWindow(QWidget):
             self.Scale = 2
         else:
             self.Scale = 1
-        self.List_of_pixels = self.file.chunks_dict['IDAT'][0].parsed_data['Result of decoding']
+        self.List_of_pixels = \
+            self.file.chunks_dict['IDAT'][0].parsed_data['Result of decoding']
 
 
 class DrawWindow(QWidget):
@@ -93,25 +106,8 @@ class DrawWindow(QWidget):
                     color = QColor(pixel[1], pixel[2], pixel[3], pixel[0])
                 qp.setPen(color)
                 qp.setBrush(color)
-                qp.drawRect(x * self.Scale, y * self.Scale, self.Scale, self.Scale)
-
-
-class RGBInfoWindow(QWidget):
-
-    def __init__(self, list_of_pixels):
-        super().__init__()
-        self.list_of_pixels = list_of_pixels
-        self.initUI()
-
-    def initUI(self):
-        self.grid = QGridLayout()
-        count = 0
-        for y in range(len(self.list_of_pixels)):
-            for x in range(len(self.list_of_pixels[0])):
-                self.grid.addWidget(QLabel('Y:{0}, X:{1} : {2}'.format(y, x, self.list_of_pixels[y][x])), count, 0)
-                count += 1
-        self.setLayout(self.grid)
-        self.show()
+                qp.drawRect(x * self.Scale, y * self.Scale,
+                            self.Scale, self.Scale)
 
 
 class HistogrammInfo(QWidget):
@@ -134,7 +130,9 @@ class HistogrammInfo(QWidget):
             brush = (0, 255, 0, 80)
         else:
             brush = (0, 0, 255, 80)
-        curve = pyqtgraph.PlotCurveItem([i for i in range(257)], self.data, stepMode=True, fillLevel=0, brush=brush)
+        curve = pyqtgraph.PlotCurveItem(
+            [i for i in range(257)], self.data,
+            stepMode=True, fillLevel=0, brush=brush)
         plot.addItem(curve)
         self.grid.addWidget(plot)
         self.setLayout(self.grid)
@@ -145,21 +143,21 @@ class HistogrammInfo(QWidget):
         if self.type_of_hist == 'R':
             index = 0
         elif self.type_of_hist == 'G':
-             index = 1
+            index = 1
         elif self.type_of_hist == 'B':
-             index = 2
+            index = 2
         else:
-             index = 'ALL'
+            index = 'ALL'
         for row in self.list_of_pixels:
             for pixel in row:
                 if type(index) == str:
-                    print(pixel)
-                    self.data[sum([pixel[i] for i in range(len(pixel) - 1)]) // 3] += 1
+                    self.data[sum(
+                        [pixel[i] for i in range(len(pixel) - 1)]) // 3] += 1
                 else:
                     self.data[pixel[index]] += 1
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MainWindow(sys.argv[1])
+    window = MainWindow()
     sys.exit(app.exec_())

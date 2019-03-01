@@ -15,7 +15,8 @@ class iTXt:
                 list_of_separators.append(i)
         key_word = self.byte_data[:list_of_separators[0]].decode()
         if self.byte_data[list_of_separators[0] + 1] == 1:
-            text = zlib.decompress(self.byte_data[list_of_separators[-1] + 1:]).decode()
+            text = zlib.decompress(
+                self.byte_data[list_of_separators[-1] + 1:]).decode()
         else:
             text = self.byte_data[list_of_separators[-1] + 1:].decode()
         self.parsed_data[key_word] = text

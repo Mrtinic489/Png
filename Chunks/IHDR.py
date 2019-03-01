@@ -1,4 +1,4 @@
-from Byte_parser import parse_bytes
+from Utils.Byte_parser import parse_bytes
 
 
 class IHDR:
@@ -9,7 +9,7 @@ class IHDR:
         self.analize()
 
     def analize(self):
-        from_bytes = parse_bytes(self.byte_data ,[0, 4, 8])
+        from_bytes = parse_bytes(self.byte_data, [0, 4, 8], False)
         self.parsed_data['Width'] = from_bytes[0]
         self.parsed_data['Height'] = from_bytes[1]
         self.parsed_data['Bit depth'] = self.byte_data[8]

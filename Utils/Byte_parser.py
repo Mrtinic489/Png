@@ -1,11 +1,13 @@
-def parse_bytes(byte_list, args, f=None):
+def parse_bytes(byte_list, args, is_cut):
     result = []
-    if f is None:
+    if not is_cut:
         for i in range(len(args) - 1):
-            result.append(int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
+            result.append(int.from_bytes(
+                byte_list[args[i]: args[i + 1]], 'big'))
     else:
         for i in range(0, len(args) - 1, 2):
-            result.append(int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
+            result.append(
+                int.from_bytes(byte_list[args[i]: args[i + 1]], 'big'))
     return result
 
 
@@ -28,8 +30,9 @@ def from_hex_to_bin(number):
 
 def from_dec_to_bin(number):
     bin_number = bin(number).replace('b', '')
-    while len(bin_number) > 8:
-        bin_number = bin_number[1:]
-    while len(bin_number) < 8:
-        bin_number = '0' + bin_number
+    len_of_bin_number = len(bin_number)
+    if len_of_bin_number > 8:
+        bin_number = bin_number[len_of_bin_number - 8:]
+    if len_of_bin_number < 8:
+        bin_number = '0'*(8 - len_of_bin_number) + bin_number
     return bin_number

@@ -1,6 +1,6 @@
 ﻿import zlib
 import math
-from Byte_parser import from_dec_to_bin, from_bin_to_dec
+from Utils.Byte_parser import from_dec_to_bin, from_bin_to_dec
 
 
 class IDAT:
@@ -18,44 +18,40 @@ class IDAT:
         self.analize()
 
     def interlace(self, byte_data):
-        dict_of_positions = dict()
-        dict_of_positions[1] = [8, 8, 1, 1]
-        dict_of_positions[2] = [8, 8, 1, 5]
-        dict_of_positions[3] = [8, 4, 5, 1]
-        dict_of_positions[4] = [4, 4, 1, 3]
-        dict_of_positions[5] = [4, 2, 3, 1]
-        dict_of_positions[6] = [2, 2, 1, 2]
-        dict_of_positions[7] = [2, 1, 2, 1]
+        list_of_positions = [
+            [8, 8, 1, 1], [8, 8, 1, 5], [8, 4, 5, 1], [4, 4, 1, 3],
+            [4, 2, 3, 1], [2, 2, 1, 2], [2, 1, 2, 1]]
 
         scanlines_and_pixels_count = []
 
-        for i in range(1, 8):
-            scanlines_count = (self.height + dict_of_positions[i][0] - dict_of_positions[i][2]) // dict_of_positions[i][0]
-            pixels_count = (self.width + dict_of_positions[i][1] - dict_of_positions[i][3]) // dict_of_positions[i][1]
-            scanlines_and_pixels_count.append(tuple([scanlines_count, pixels_count]))
+        for i in range(7):
+            scanlines_count = \
+                (self.height +
+                 list_of_positions[i][0] - list_of_positions[i][2])\
+                // list_of_positions[i][0]
+            pixels_count = \
+                (self.width +
+                 list_of_positions[i][1] - list_of_positions[i][3])\
+                // list_of_positions[i][1]
+            scanlines_and_pixels_count.append(tuple(
+                [scanlines_count, pixels_count]))
 
-        bytes_dict = dict()
-        bytes_dict[1] = []
-        bytes_dict[2] = []
-        bytes_dict[3] = []
-        bytes_dict[4] = []
-        bytes_dict[5] = []
-        bytes_dict[6] = []
-        bytes_dict[7] = []
+        bytes_list = [[] for i in range(7)]
 
         total_index = 0
         for index, item in enumerate(scanlines_and_pixels_count):
             scanline_length = self.find_scanline_length_fro_interlace(item[1])
             for i in range(item[0]):
                 byte_str = byte_data[total_index:total_index + scanline_length]
-                result_str = ''
-                for item in byte_str:
-                    result_str += from_dec_to_bin(item)
-                bytes_dict[index + 1].append(result_str)
+                result_str = ''.join(
+                    [from_dec_to_bin(item) for item in byte_str])
+                bytes_list[index].append(result_str)
                 total_index += scanline_length
         list_of_all_pixels = []
-        for pair in bytes_dict.items():
-            list_of_all_pixels.append(self.decode_interlace(pair[1], scanlines_and_pixels_count[pair[0] - 1][1]))
+        for index, item in enumerate(bytes_list):
+            list_of_all_pixels.append(
+                self.decode_interlace(item,
+                                      scanlines_and_pixels_count[index][1]))
 
         result = []
         for j in range(self.height):
@@ -66,18 +62,22 @@ class IDAT:
 
         for index, item in enumerate(list_of_all_pixels):
             for j, line in enumerate(item):
-                times_in_line = dict_of_positions[index + 1][0]
-                times_in_coloum = dict_of_positions[index + 1][1]
-                first_in_line = dict_of_positions[index + 1][2] - 1
-                first_in_coloum = dict_of_positions[index + 1][3] - 1
+                times_in_line = list_of_positions[index][0]
+                times_in_coloum = list_of_positions[index][1]
+                first_in_line = list_of_positions[index][2] - 1
+                first_in_coloum = list_of_positions[index][3] - 1
                 for i, pixel in enumerate(line):
-                    result[first_in_line + j * times_in_line][first_in_coloum + i * times_in_coloum] = pixel
+                    result[first_in_line + j *
+                           times_in_line][first_in_coloum + i *
+                                          times_in_coloum] = pixel
 
         self.parsed_data['Result of decoding'] = result
 
     def decode_interlace(self, raw_list_of_pixels, count_of_pixels):
         list_of_pixels = []
-        width = math.ceil(count_of_pixels * self.return_size_of_pixel() * self.bit_depth / 8) + 1
+        width = math.ceil(
+            count_of_pixels * self.return_size_of_pixel() *
+            self.bit_depth / 8) + 1
         size = self.return_size_of_pixel()
         for index, line in enumerate(raw_list_of_pixels):
             filter = from_bin_to_dec(line[:8])
@@ -95,7 +95,9 @@ class IDAT:
         return list_of_pixels
 
     def find_scanline_length_fro_interlace(self, pixel_count):
-        return math.ceil((pixel_count * self.bit_depth * self.return_size_of_pixel() + 8) / 8)
+        return math.ceil(
+            (pixel_count * self.bit_depth *
+             self.return_size_of_pixel() + 8) / 8)
 
     def analize(self):
         zobj = zlib.decompressobj()
@@ -108,12 +110,14 @@ class IDAT:
         for j in range(self.height):
             line = ''
             try:
-                for i in range(width):
-                    line += from_dec_to_bin(decompress_bytes[j * width + i])
+                line = ''.join(
+                    from_dec_to_bin(decompress_bytes[j * width + i])
+                    for i in range(width))
                 raw_list_of_pixels.append(line)
             except Exception:
                 raw_list_of_pixels.append(line)
-        self.parsed_data['Result of decoding'] = self.decoding(raw_list_of_pixels)
+        self.parsed_data['Result of decoding']\
+            = self.decoding(raw_list_of_pixels)
 
     def decoding(self, raw_list_of_pixels):
         list_of_pixels = []
@@ -131,7 +135,8 @@ class IDAT:
                     for j in range(size):
                         pixel.append(sub_line[i * size + j])
                     pixel_line.append(self.parse_to_rgb(pixel))
-                pixel_line = self.filter(filter, pixel_line, list_of_pixels, index)
+                pixel_line = self.filter(
+                    filter, pixel_line, list_of_pixels, index)
                 list_of_pixels.append(pixel_line)
             return list_of_pixels
         except Exception:
@@ -143,7 +148,8 @@ class IDAT:
             result_pixel = []
             for j in range(len(current[i])):
                 if i > 0:
-                    result_pixel.append((current[i][j] + (result_line[i - 1][j] if i > 0 else 0)) % 256)
+                    result_pixel.append(
+                        (current[i][j] + (result_line[i - 1][j])) % 256)
                 else:
                     result_pixel.append(current[i][j])
             result_line.append(result_pixel)
@@ -166,7 +172,8 @@ class IDAT:
                 for j in range(len(current[i])):
                     if i > 0:
                         result_pixel.append(
-                            (current[i][j] + math.floor((result_line[i - 1][j]) / 2)) % 256)
+                            (current[i][j] + math.floor(
+                                (result_line[i - 1][j]) / 2)) % 256)
                     else:
                         result_pixel.append(current[i][j])
                 result_line.append(result_pixel)
@@ -175,9 +182,13 @@ class IDAT:
             result_pixel = []
             for j in range(len(current[i])):
                 if i > 0:
-                    result_pixel.append((current[i][j] + math.floor((result_line[i - 1][j] + previous[i][j]) / 2)) % 256)
+                    result_pixel.append(
+                        (current[i][j] + math.floor(
+                            (result_line[i - 1][j] + previous[i][j]) / 2))
+                        % 256)
                 else:
-                    result_pixel.append((current[i][j] + math.floor(previous[i][j] / 2)) % 256)
+                    result_pixel.append(
+                        (current[i][j] + math.floor(previous[i][j] / 2)) % 256)
             result_line.append(result_pixel)
         return result_line
 
@@ -188,7 +199,10 @@ class IDAT:
                 result_pixel = []
                 for j in range(len(current[i])):
                     if i > 0:
-                        result_pixel.append((current[i][j] + self.paeth_predictor(result_line[i - 1][j], 0, 0)) % 256)
+                        result_pixel.append(
+                            (current[i][j] +
+                             self.paeth_predictor(
+                                 result_line[i - 1][j], 0, 0)) % 256)
                     else:
                         result_pixel.append(current[i][j])
                 result_line.append(result_pixel)
@@ -197,9 +211,15 @@ class IDAT:
             result_pixel = []
             for j in range(len(current[i])):
                 if i > 0:
-                    result_pixel.append((current[i][j] + self.paeth_predictor(result_line[i - 1][j], previous[i][j], previous[i-1][j])) % 256)
+                    result_pixel.append(
+                        (current[i][j] +
+                         self.paeth_predictor(result_line[i - 1][j],
+                                              previous[i][j],
+                                              previous[i-1][j])) % 256)
                 else:
-                    result_pixel.append((current[i][j] + self.paeth_predictor(0, previous[i][j], 0)) % 256)
+                    result_pixel.append(
+                        (current[i][j] + self.paeth_predictor(
+                            0, previous[i][j], 0)) % 256)
             result_line.append(result_pixel)
         return result_line
 
@@ -269,7 +289,8 @@ class IDAT:
             t = result[0]
             result[0] = result[3]
             result[3] = t
-        elif self.color_type == 'Grayscale' or self.color_type == 'Grayscale + alpha channel':
+        elif self.color_type == 'Grayscale' or \
+                self.color_type == 'Grayscale + alpha channel':
             if self.bit_depth == 1:
                 index = 255
             elif self.bit_depth == 2:
@@ -291,7 +312,8 @@ class IDAT:
         return result
 
     def return_size_of_pixel(self):
-        if self.color_type == 'Grayscale' or self.color_type == 'Индексированные значения':
+        if self.color_type == 'Grayscale' or \
+                self.color_type == 'Индексированные значения':
             return 1
         elif self.color_type == 'Grayscale + alpha channel':
             return 2

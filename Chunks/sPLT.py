@@ -1,4 +1,4 @@
-from Byte_parser import parse_bytes
+from Utils.Byte_parser import parse_bytes
 
 
 class sPLT:
@@ -20,9 +20,12 @@ class sPLT:
             self.parsed_data['sPLT info green'] = self.byte_data[index + 3]
             self.parsed_data['sPLT info blue'] = self.byte_data[index + 4]
             self.parsed_data['sPLT info alpha'] = self.byte_data[index + 5]
-            self.parsed_data['sPLT info freuency'] = parse_bytes(self.byte_data, [index + 6, index + 8])[0]
+            self.parsed_data['sPLT info frecuency'] = \
+                parse_bytes(self.byte_data, [index + 6, index + 8], False)[0]
         else:
-            from_bytes = parse_bytes(self.byte_data, [index + i for i in [2, 4, 5, 6, 7, 8, 9, 10]], True)
+            from_bytes = parse_bytes(
+                self.byte_data, [index + i for i in [2, 4, 5, 6, 7, 8, 9, 10]],
+                True)
             self.parsed_data['sPLT info red'] = from_bytes[0]
             self.parsed_data['sPLT info green'] = from_bytes[1]
             self.parsed_data['sPLT info blue'] = from_bytes[2]

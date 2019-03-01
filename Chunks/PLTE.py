@@ -8,4 +8,5 @@ class PLTE:
     def analize(self):
         for i in range(0, len(self.byte_data), 3):
             self.parsed_data[i // 3] =\
-                tuple([self.byte_data[i], self.byte_data[i + 1], self.byte_data[i + 2]])
+                tuple([self.byte_data[i],
+                       self.byte_data[i + 1], self.byte_data[i + 2]])
